@@ -1,0 +1,60 @@
+public class Board {
+
+    private int[][] board;
+    private int x;
+    private int o;
+
+    public Board(){
+        board = new int[3][3];
+        x = 1;
+        o = -1;
+
+    }
+
+
+    public void string() {
+        String[][] xotable = new String[3][3];
+        for(int i = 0 ; i < xotable.length; i++){
+            for (int j = 0 ; j < xotable[i].length; j++){
+                if (board[i][j] == 0){
+                    xotable[i][j] = " ";
+                } else if (board[i][j] == 1){
+                    xotable[i][j] = "X";
+                }else if (board[i][j] == -1){
+                    xotable[i][j] = "O";
+                }
+            }
+        }
+        System.out.println(xotable[0][0]+"    | "+xotable[0][1]+"     | "+xotable[0][2]+"   ");
+        System.out.println(             "-----|-------|----");
+        System.out.println(xotable[1][0]+"    | "+xotable[1][1]+"     | "+xotable[1][2]+"   ");
+        System.out.println(              "-----|-------|----");
+        System.out.println(xotable[2][0]+"    | "+xotable[2][1]+"     | "+xotable[2][2]+"   ");
+        System.out.println("                                         ");
+        System.out.println("Please give us the row and column that you would like");
+        System.out.println("EX. "3,4);
+    }
+
+    public void findNextBestPosition(){
+        //write minimax algo
+    }
+    public boolean isValid(int r, int c){ //done✅
+
+        return (r <= 3 && r > 0 ) && (c <= 3 && c > 0 ) && (board[r][c] == 0);
+    }
+    //public boolean winCheck(){
+        //three in a row checker
+    //}
+
+    public void updateBoard(int r, int c, boolean player){
+        if (player == false){
+           board[r][c] = -1;
+        }// o's turn
+        if (player == true){
+           board[r][c] = 1;
+        }// x'turn
+
+    }
+
+
+}
