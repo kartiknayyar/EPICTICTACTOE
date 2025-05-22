@@ -1,0 +1,13 @@
+public class Main {
+    public static void main(String[] args) {
+        Board b = new Board();
+        b.updateBoard(0,0,true);
+        b.updateBoard(1,0,true);
+        b.updateBoard(2,0,true);
+        b.updateBoard(0,1,false);
+        b.string();
+        //while(!b.isEmpty && !b.winCheck()){
+
+        //}
+    }
+}
